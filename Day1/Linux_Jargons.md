@@ -1,0 +1,1 @@
+KDUMP: Allows you to use a KDUMP kernel. This is a kernel that creates a core dump if anything goes wrong.

@@ -19,4 +19,5 @@ rm : Remove a file or a directory.
 rm -rf: THE MOST DANGEROUS COMMAND IN LINUX. Removes all the files within a directory.
 chmod: It is used to change the permission on a file or a directory.
 chown: It is used to change the owner of the file or a directory.
-
+# : This means we are logged in to the terminal as Super User or Admin.
+$ : This means we are logged into the terminal as normal user.

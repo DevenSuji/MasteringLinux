@@ -1,4 +1,4 @@
-# <b><ins><i>Day 1</i></ins></b>
+# <b><ins><i>Linux Notes</i></ins></b>
   
 ### <b><ins>Basic Specs for installing RHEL 8</ins></b>
 * 1 GiB RAM

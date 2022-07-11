@@ -13,3 +13,9 @@ RHEL 8 by default uses the XFS file system. This file system cannot be shrunk; i
   
 ### <b><ins>Benefits of RHEL 8</ins></b>
 The most important things that you get in the official RHEL 8 Server release is access to the Red Hat Customer Portal. Through this portal, you have access to a wide variety of information regarding RHEL, in addition to updates provided through Red Hat Network (RHN). In particular, the Red Hat knowledge base is invaluable; you can use it to find answers to many common problems that have been posted there by Red Hat consultants.
+
+### <b><ins>Alias</ins></b>
+An alias is a command that a user can define as needed. Some aliases are provided by default; type alias on the command line to get an overview. To define an alias, use alias newcommand='oldcommand', as in the default alias ll='ls -l --color=auto'.
+```bash
+cls='clear --color=auto'
+```

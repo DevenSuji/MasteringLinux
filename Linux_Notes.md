@@ -21,9 +21,8 @@ cls='clear --color=auto'
 ```
 
 ### <b><ins>VIM Commands</ins></b>
-```{html}
+
 | VIM Command | Explanation |   
 |:-------|:----------|
 | Esc | Switches from input mode to command mode. Press this key before typing any command. |
 | i, a | Switches from command mode to input mode at (i) or after (a) the current cursor position. |
-```

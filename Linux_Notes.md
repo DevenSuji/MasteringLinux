@@ -48,7 +48,7 @@ cls='clear --color=auto'
 ### <b><ins>MAN Pages</ins></b>
 
 Man pages are categorized in different sections. The most relevant sections for
-system administrators are as follows:
-■ 1: Executable programs or shell commands
-■ 5: File formats and conventions
-■ 8: System administration commands
+system administrators are as follows:  
+■ 1: Executable programs or shell commands  
+■ 5: File formats and conventions  
+■ 8: System administration commands  

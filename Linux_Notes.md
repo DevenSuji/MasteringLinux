@@ -44,3 +44,11 @@ cls='clear --color=auto'
 | $ | Goes to the last position in the current line. |
 | !ls | Adds the output of ls (or any other command) in the current file. |
 |:%s/old/new/g | Replaces all occurrences of old with new. |
+
+### <b><ins>MAN Pages</ins></b>
+
+Man pages are categorized in different sections. The most relevant sections for
+system administrators are as follows:
+■ 1: Executable programs or shell commands
+■ 5: File formats and conventions
+■ 8: System administration commands

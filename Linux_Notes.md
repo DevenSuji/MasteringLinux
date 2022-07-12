@@ -52,3 +52,14 @@ system administrators are as follows:
 ■ 1: Executable programs or shell commands  
 ■ 5: File formats and conventions  
 ■ 8: System administration commands  
+  
+There are also sections that provide in-depth details about your Linux system, such as the sections about system calls and library calls. When using man -k, you’ll get results from all of these sections. To limit the results that display, it makes sense to
+use grep to show only those sections that are relevant for what you need. So, if you are looking for the configuration file that has something to do with passwords, use
+```bash
+man -k password | grep 5
+```   
+Or if you are looking for the command that an administrator would use to create partitions, use 
+```bash
+man -k partition | grep 8
+```
+Another useful man option is -f. The command man -f <somecommand> displays a short description of the item as found in the mandb database. This may help you when deciding whether this man page contains the information you are looking for.

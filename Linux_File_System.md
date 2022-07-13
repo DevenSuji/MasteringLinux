@@ -32,3 +32,9 @@ mount
 ```bash
 df -Th
 ```
+* findmnt: The findmnt command shows mounts and the relationship that exists between the different mounts. Because the output of the mount command is a bit overwhelming, you may like the output of findmnt.
+```bash
+findmnt
+```
+
+

@@ -115,3 +115,8 @@ devices, as well as on directories. The major disadvantage is that when the orig
   
 ### <b><ins><i>Creating Links</i></ins></b>
 Use the ln command to create links. It uses the same order of parameters as cp and mv; first you mention the source name, followed by the destination name. If you want to create a symbolic link, you use the option -s, and then you specify the source and target file or directory. One important restriction applies, however: to be able to create hard links, you must be the owner of the item that you want to link to. This is a relatively new security restriction that was introduced in RHEL 7.
+```bash
+ln /etc/hosts . # Creates a link to the file /etc/hosts in the current directory
+ln -s /etc/hosts . # Creates a symbolic link to the file /etc/hosts in the current directory
+ln -s /home /tmp # Creates a symbolic link to the directory /home in the directory /tmp
+```

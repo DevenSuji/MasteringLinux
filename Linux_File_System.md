@@ -24,3 +24,11 @@ The layout of the Linux file system is defined in the Filesystem Hierarchy Stand
 
 ### <b><ins>Commands</ins></b>
 * mount : The mount command gives an overview of all mounted devices. To get this information, the /proc/mounts file is read, where the kernel keeps information about all current mounts. It shows kernel interfaces also, which may lead to a long list of mounted devices being displayed.
+```bash
+mount
+```
+  
+* df -Th : The df -Th command was designed to show available disk space on mounted devices; it includes most of the system mounts. Because it will look on all mounted file systems, it is a convenient command to get an overview of current system mounts. The -h option summarizes the output of the command in a human-readable way, and the -T option shows which file system type is used on the different mounts.
+```bash
+df -Th
+```

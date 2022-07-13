@@ -83,5 +83,11 @@ Let’s take a look at some examples:
 * mv myfile /tmp: Moves the file myfile from the current directory to /tmp.  
 * mkdir somefiles; mv somefiles /tmp: First creates a directory with the name somefiles and then moves this directory to /tmp. Notice that this also works if the directory contains files.  
 * mv myfile mynewfile: Renames the file myfile to a new file with the name mynewfile.  
+  
+### <b><ins><i>Deleting Files</i></ins></b>
+```bash
+rm filename # Deletes the file by the name filename
+rm -r /tmp/ # Deletes the files recursively.
+```
 
 

@@ -1,6 +1,6 @@
 # <b><ins><i>Linux File System</i></ins></b>
   
-### <b><ins>Basic Specs for installing RHEL 8</ins></b>
+### <b><ins>Linux Filesystem Hierarchy Standard (FHS)</ins></b>
 
 The layout of the Linux file system is defined in the Filesystem Hierarchy Standard (FHS), and this file system hierarchy is described in man 7 hier.  
 
@@ -21,3 +21,6 @@ The layout of the Linux file system is defined in the Filesystem Hierarchy Stand
 | /tmp | Contains temporary files that may be deleted without any warning during boot. |
 | /usr | Contains subdirectories with program files, libraries for these program files, and documentation about them. |
 | /var | Contains files that may change in size dynamically, such as log files, mail boxes, and spool files. |
+
+### <b><ins>Commands</ins></b>
+* mount : The mount command gives an overview of all mounted devices. To get this information, the /proc/mounts file is read, where the kernel keeps information about all current mounts. It shows kernel interfaces also, which may lead to a long list of mounted devices being displayed.

@@ -48,3 +48,40 @@ directory you want to work with. This pathname starts with the root directory, f
 | ls -lrt | This is a very useful command. It shows commands sorted on modification date. You’ll see the most recently modified files last in the list. |
 | ls -d | Shows the names of directories, not the contents of all directories that match the wildcards that have been used with the ls command. |
 | ls -R | Shows the contents of the current directory, in addition to all of its subdirectories; that is, it Recursively descends all subdirectories. |
+
+### <b><ins><i>Copying Files</i></ins></b>  
+  
+If you copy a file to a directory, but the target directory does not exist, a file will be created with the name of the alleged target directory. In many cases, that’s not the best solution and it would be better to just get an error message instead. You can
+accomplish this by placing a / after the directory name, so use cp /etc/hosts /tmp/ and not cp /etc/hosts /tmp.  
+  
+| Command | Use |   
+|:-------|:----------|
+| cp /etc/hosts /tmp/file1 | Contents of the file hosts is copied over to the file by the name file1 |
+| cp -R /tmp /tmp/sound/ | Recursive copy |
+| cp -a ~ /tmp. | -a option keeps the permissions intact when copying |  
+  
+A special case when working with cp is hidden files. By default, hidden files are not copied over. There are three solutions to copy hidden files as well:  
+```bash
+cp /somedir/.* /tmp
+``` 
+This copies all files that have a name starting with a dot (the hidden files, that is) to /tmp. It gives an error message for directories whose name starts with a dot in /somedir, because the -R option was not used.  
+  
+```bash
+cp -a /somedir/
+```
+This copies the entire directory /somedir, including its contents, to the current directory. So, as a result, a subdirectory somedir will
+be created in the current directory.  
+  
+```bash
+cp -a /somedir/. .
+```
+This copies all files, regular and hidden, to the current directory (notice the space between the two dots at the end of this command).
+
+### <b><ins><i>Moving  Files</i></ins></b> 
+To move files, you use the mv command. This command removes the file from its current location and puts it in the new location. You can also use it to rename a file (which, in fact, is nothing else than copying and deleting the original file anyway).  
+Let’s take a look at some examples:  
+■ mv myfile /tmp: Moves the file myfile from the current directory to /tmp.  
+■ mkdir somefiles; mv somefiles /tmp: First creates a directory with the name somefiles and then moves this directory to /tmp. Notice that this also works if the directory contains files.  
+■ mv myfile mynewfile: Renames the file myfile to a new file with the name mynewfile.  
+
+

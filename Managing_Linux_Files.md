@@ -119,4 +119,15 @@ Use the ln command to create links. It uses the same order of parameters as cp a
 ln /etc/hosts . # Creates a link to the file /etc/hosts in the current directory
 ln -s /etc/hosts . # Creates a symbolic link to the file /etc/hosts in the current directory
 ln -s /home /tmp # Creates a symbolic link to the directory /home in the directory /tmp
+```  
+  
+The ls command will reveal whether a file is a link:  
+* In the output of the ls -l command, the first character is an l if the file is a symbolic link.
+* If a file is a symbolic link, the output of ls -l shows the name of the item it links to after the filename.
+* If a file is a hard link, ls -l shows the hard link counter. In the output in Example 3-4, this is the number 3 that is right before root root for the hosts file.
+```bash
+[root@localhost tmp]# \ls -l
+total 3
+lrwxrwxrwx. 1 root root 5 Jan 19 04:38 home -> /home
+-rw-r--r--. 3 root root 158 Jun 7 2013 hosts
 ```

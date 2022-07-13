@@ -99,6 +99,16 @@ Linux stores administrative data about files in inodes. The inode is used to sto
 * The data block where the file contents are stored.
 * The creation, access, and modification date.
 * Permissions.
-* File owners.
+* File owners.  
+  
+Just one important piece of information is not stored in the inode: the name of the file. Names are stored in the directory, and each filename knows which inode it has to address to access further file information. It is interesting to know that an inode does not know which name it has; it just knows how many names are associated with the inode. These names are referred to as hard links. When you create a file, you give it a name. Basically, this name is a hard link. On a Linux file system, multiple hard links can be created to a file. This can be useful, because it enables you to access the file from multiple different locations. Some restrictions apply to hard links, though:  
+* Hard links must exist all on the same device (partition, logical volume, etc).
+* You cannot create hard links to directories.
+* When the last name (hard link) to a file is removed, access to the file’s data is also removed.  
+The nice thing about hard links is that no difference exists between the first hard link and the second hard link. They are both just hard links, and if the first hard link that ever existed for a file is removed, that does not impact the other hard links that
+still exist. The Linux operating system uses links on many locations to make files more accessible.  
+  
+##### <b><ins><i>Understanding Symbolic Links</i></ins></b>  
+
 
 

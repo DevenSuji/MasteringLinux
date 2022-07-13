@@ -90,4 +90,15 @@ rm filename # Deletes the file by the name filename
 rm -r /tmp/ # Deletes the files recursively.
 ```
 
+### <b><ins><i>Links</i></ins></b>
+Links on Linux are like aliases that are assigned to a file. There are symbolic links, and there are hard links. To understand a link, you need to know a bit about how the Linux file system uses inodes for file system administration.
+
+
+##### <b><ins><i>Understanding Hard Links</i></ins></b>
+Linux stores administrative data about files in inodes. The inode is used to store all administrative data about files. Every file on Linux has an inode, and in the inode, important information about the file is stored:
+* The data block where the file contents are stored.
+* The creation, access, and modification date.
+* Permissions.
+* File owners.
+
 

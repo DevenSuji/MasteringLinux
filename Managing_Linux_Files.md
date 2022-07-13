@@ -9,7 +9,7 @@ As an administrator, you need to be able to perform common file management tasks
 * Moving files and directories.
 * Deleting files and directories.
 
-### <b><ins><i>Working with Wildcards</i></ins></b>
+## <b><ins><i>Working with Wildcards</i></ins></b>
 
 When working with files, using wildcards can make your work a lot easier. A wildcard is a shell feature that helps you refer to multiple files in an easy way.
 | Wildcard | Use |   
@@ -18,7 +18,7 @@ When working with files, using wildcards can make your work a lot easier. A wild
 | ? | Used to refer to one specific character that can be any character. ls c?t would match cat as well as cut. |
 | [auo] | Refers to one character that may be selected from the range that is specified between square brackets. ls c[auo]t would match cat, cut, and cot. |
 
-### <b><ins><i>Commands</i></ins></b>
+## <b><ins><i>Commands</i></ins></b>
 
 | Wildcard | Use |   
 |:-------|:----------|
@@ -30,7 +30,7 @@ When working with files, using wildcards can make your work a lot easier. A wild
 | mkdir folder1 | Creates a directory by the name folder1 |
 | rmdir folder1 | Deletes the folder by the name folder1 |
 
-### <b><ins><i>Absolute and Relative Pathnames</i></ins></b>
+## <b><ins><i>Absolute and Relative Pathnames</i></ins></b>
 
 * Absolute filename/pathname: An absolute filename, or absolute pathname, is a complete path reference to the file or
 directory you want to work with. This pathname starts with the root directory, followed by all subdirectories up to the actual filename. No matter what your current directory is, absolute filenames will always work. An example of an absolute filename is /home/lisa/file1.
@@ -39,7 +39,7 @@ directory you want to work with. This pathname starts with the root directory, f
 (as shown by the pwd command). When you refer to the relative filename lisa/file1, you are referring to the absolute filename /home/lisa/file1.
 
 
-### <b><ins><i>Listing Files and Directories</i></ins></b>
+## <b><ins><i>Listing Files and Directories</i></ins></b>
 
 | Command | Use |   
 |:-------|:----------|
@@ -49,7 +49,7 @@ directory you want to work with. This pathname starts with the root directory, f
 | ls -d | Shows the names of directories, not the contents of all directories that match the wildcards that have been used with the ls command. |
 | ls -R | Shows the contents of the current directory, in addition to all of its subdirectories; that is, it Recursively descends all subdirectories. |
 
-### <b><ins><i>Copying Files</i></ins></b>  
+## <b><ins><i>Copying Files</i></ins></b>  
   
 If you copy a file to a directory, but the target directory does not exist, a file will be created with the name of the alleged target directory. In many cases, that’s not the best solution and it would be better to just get an error message instead. You can
 accomplish this by placing a / after the directory name, so use cp /etc/hosts /tmp/ and not cp /etc/hosts /tmp.  
@@ -77,24 +77,24 @@ cp -a /somedir/. .
 ```
 This copies all files, regular and hidden, to the current directory (notice the space between the two dots at the end of this command).
 
-### <b><ins><i>Moving  Files</i></ins></b> 
+## <b><ins><i>Moving  Files</i></ins></b> 
 To move files, you use the mv command. This command removes the file from its current location and puts it in the new location. You can also use it to rename a file (which, in fact, is nothing else than copying and deleting the original file anyway).  
 Let’s take a look at some examples:  
 * mv myfile /tmp: Moves the file myfile from the current directory to /tmp.  
 * mkdir somefiles; mv somefiles /tmp: First creates a directory with the name somefiles and then moves this directory to /tmp. Notice that this also works if the directory contains files.  
 * mv myfile mynewfile: Renames the file myfile to a new file with the name mynewfile.  
   
-### <b><ins><i>Deleting Files</i></ins></b>
+## <b><ins><i>Deleting Files</i></ins></b>
 ```bash
 rm filename # Deletes the file by the name filename
 rm -r /tmp/ # Deletes the files recursively.
 ```
 
-### <b><ins><i>Links</i></ins></b>
+## <b><ins><i>Links</i></ins></b>
 Links on Linux are like aliases that are assigned to a file. There are symbolic links, and there are hard links. To understand a link, you need to know a bit about how the Linux file system uses inodes for file system administration.
 
 
-##### <b><ins><i>Understanding Hard Links</i></ins></b>
+### <b><ins><i>Understanding Hard Links</i></ins></b>
 Linux stores administrative data about files in inodes. The inode is used to store all administrative data about files. Every file on Linux has an inode, and in the inode, important information about the file is stored:
 * The data block where the file contents are stored.
 * The creation, access, and modification date.
@@ -109,7 +109,14 @@ Just one important piece of information is not stored in the inode: the name of 
 The nice thing about hard links is that no difference exists between the first hard link and the second hard link. They are both just hard links, and if the first hard link that ever existed for a file is removed, that does not impact the other hard links that
 still exist. The Linux operating system uses links on many locations to make files more accessible.  
   
-##### <b><ins><i>Understanding Symbolic Links</i></ins></b>  
-
-
-
+### <b><ins><i>Understanding Symbolic Links</i></ins></b>  
+A symbolic link (also referred to as soft link) does not link directly to the inode but to the name of the file. This makes symbolic links much more flexible, but it also has some disadvantages. The advantage of symbolic links is that they can link to files on other
+devices, as well as on directories. The major disadvantage is that when the original file is removed, the symbolic link becomes invalid and does not work any longer.  
+  
+### <b><ins><i>Creating Links</i></ins></b>
+Use the ln command to create links. It uses the same order of parameters as cp
+and mv; first you mention the source name, followed by the destination name. If
+you want to create a symbolic link, you use the option -s, and then you specify the
+source and target file or directory. One important restriction applies, however: to be
+able to create hard links, you must be the owner of the item that you want to link to.
+This is a relatively new security restriction that was introduced in RHEL 7.

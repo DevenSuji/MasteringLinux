@@ -80,8 +80,8 @@ This copies all files, regular and hidden, to the current directory (notice the 
 ### <b><ins><i>Moving  Files</i></ins></b> 
 To move files, you use the mv command. This command removes the file from its current location and puts it in the new location. You can also use it to rename a file (which, in fact, is nothing else than copying and deleting the original file anyway).  
 Let’s take a look at some examples:  
-■ mv myfile /tmp: Moves the file myfile from the current directory to /tmp.  
-■ mkdir somefiles; mv somefiles /tmp: First creates a directory with the name somefiles and then moves this directory to /tmp. Notice that this also works if the directory contains files.  
-■ mv myfile mynewfile: Renames the file myfile to a new file with the name mynewfile.  
+* mv myfile /tmp: Moves the file myfile from the current directory to /tmp.  
+* mkdir somefiles; mv somefiles /tmp: First creates a directory with the name somefiles and then moves this directory to /tmp. Notice that this also works if the directory contains files.  
+* mv myfile mynewfile: Renames the file myfile to a new file with the name mynewfile.  
 
 

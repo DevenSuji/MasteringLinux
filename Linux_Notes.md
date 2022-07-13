@@ -63,3 +63,21 @@ Or if you are looking for the command that an administrator would use to create 
 man -k partition | grep 8
 ```
 Another useful man option is -f. The command man -f <somecommand> displays a short description of the item as found in the mandb database. This may help you when deciding whether this man page contains the information you are looking for.
+
+### <b><ins>Topics to Learn</ins></b>
+shell  
+bash  
+internal command  
+external command  
+$PATH  
+variable  
+STDIN  
+STDOUT  
+STDERR  
+file descriptor  
+pipe  
+redirect  
+device files   
+environment  
+login shell  
+subshell  

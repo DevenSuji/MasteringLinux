@@ -105,6 +105,7 @@ Just one important piece of information is not stored in the inode: the name of 
 * Hard links must exist all on the same device (partition, logical volume, etc).
 * You cannot create hard links to directories.
 * When the last name (hard link) to a file is removed, access to the file’s data is also removed.  
+  
 The nice thing about hard links is that no difference exists between the first hard link and the second hard link. They are both just hard links, and if the first hard link that ever existed for a file is removed, that does not impact the other hard links that
 still exist. The Linux operating system uses links on many locations to make files more accessible.  
   

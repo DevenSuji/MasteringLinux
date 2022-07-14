@@ -15,7 +15,16 @@ RHEL 8 by default uses the XFS file system. This file system cannot be shrunk; i
 The most important things that you get in the official RHEL 8 Server release is access to the Red Hat Customer Portal. Through this portal, you have access to a wide variety of information regarding RHEL, in addition to updates provided through Red Hat Network (RHN). In particular, the Red Hat knowledge base is invaluable; you can use it to find answers to many common problems that have been posted there by Red Hat consultants.
 
 ### <b><ins>Alias</ins></b>
-An alias is a command that a user can define as needed. Some aliases are provided by default; type alias on the command line to get an overview. To define an alias, use alias newcommand='oldcommand', as in the default alias ll='ls -l --color=auto' that has already been created on your system. Aliases are executed before anything else. So, if you have an alias with the name ll but also a command with the name ll, the alias will always take precedence, unless a complete pathname is used.
+An alias is a command that a user can define as needed. Some aliases are provided by default; type alias on the command line to get an overview. To define an alias, use alias newcommand='oldcommand', as in the default alias ll='ls -l --color=auto' that has already been created on your system. Aliases are executed before anything else. So, if you have an alias with the name ll but also a command with the name ll, the alias will always take precedence, unless a complete pathname is used.  
+  
+Steps to create an alias:  
+* Ensure that you are in your home directory.
+* Run vi .bashrc.
+* At the end of this file add alias cls='clear'.
+* Save and Close.
+* Log off and login.
+* The command cls should clear your terminal window now.
+
 ```bash
 cls='clear --color=auto'
 ```
@@ -26,7 +35,7 @@ cls='clear --color=auto'
 |:-------|:----------|
 | Esc | Switches from input mode to command mode. Press this key before typing any command. |
 | i, a | Switches from command mode to input mode at (i) or after (a) the current cursor position. |
-| o | Opens a new line below the current cursor position and goes to input mode. | 
+| o | Opens a new line beloew the current cursor position and goes to input mode. | 
 | :wq | Writes the current file and quits. |
 | :q! | Quits the file without applying any changes. The ! forces the command to do its work. Only add the ! if you really know what you are doing. |
 | :w | filename Writes the current file with a new filename. |

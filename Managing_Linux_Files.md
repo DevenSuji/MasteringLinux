@@ -131,3 +131,58 @@ total 3
 lrwxrwxrwx. 1 root root 5 Jan 19 04:38 home -> /home
 -rw-r--r--. 3 root root 158 Jun 7 2013 hosts
 ```
+NOTE: The command used is \ls -l, not ls -l. The ls command by default is an alias, which takes care of using the different colors when showing ls output; the \ in front of the command causes the alias not to be used.
+  
+## <b><ins><i>Working with Archives and Compressed Files</i></ins></b>  
+
+### <b><ins><i>Managing Archives with tar</i></ins></b>
+The Tape ARchiver (tar) utility is used to archive files. Although originally designed to stream files to a backup tape, in its current use tar is used mostly to write files to an archive file. You have to be able to perform four important tasks with tar on the RHCSA exam:  
+* Create an archive.
+* List the contents of an archive.
+* Extract an archive.
+* Compress and uncompress archives.  
+    
+### <b><ins><i>Creating Archives with tar</i></ins></b>
+To create an archive, you use the <i>tar -cf archivename.tar /files-you-want-toarchive</i> command. If you want to see what is happening, use the -v option as well. To put files in an archive, you need at least read permissions to the file and execute permissions on the directory the file resides in. Use tar -cvf /root/homes.tar /home as user root to write the contents of the /home directory and everything
+below it to the file homes.tar in the directory /root. Notice the options that are used; the order in these options is important.
+```bash
+tar -cvf archivename.tar /files-you-want-toarchive # Creating a new tar file
+```  
+While managing archives with tar, it is also possible to add a file to an existing archive or to update an archive. To add a file to an archive, you use the -r options. Use, for instance, tar -rvf /root/homes.tar /etc/hosts to add the /etc/hosts file to the archive.  
+```bash
+tar -rvf /root/homes.tar /etc/hosts # To add a file to an existing tar file.
+```  
+To update a currently existing archive file, you can use the -u option. So, use tar -uvf /root/homes.tar /home to write newer versions of all files in /home to the archive.
+```bash
+tar -uvf /root/homes.tar /home # To update and existing tar file.
+```  
+Before extracting a file, it is good to know what might be expected. The option -t can be used to find out. Type, for instance, tar -tvf /root/homes.tar to see the contents of the tar archive.
+```bash
+tar -tvf /root/homes.tar # To see the contents of the tar file
+```
+NOTE : It is good practice to create archive files with an extension such as .tar or .tgz so that they can be easily recognized, but not everyone does that. If you think that a file is a tar archive, but you are not sure, use the file command. If you type file somefile, for instance, the file command analyzes its contents and shows on the command line what type of file it is.
+```bash
+[devensuji@tower ~]$ file passwd
+passwd: symbolic link to /etc/passwd
+```  
+To extract the contents of an archive, use tar -xvf /archivename. This extracts the archive in the current directory. That means that if you are in /root when typing tar -xvf /root/homes.tar, and the file contains a directory /home, after extracting you’ll have a new directory /root/home that contains the entire contents of the file. This might not be what you wanted to accomplish. There are two solutions to put the extracted contents right where you want to have them:  
+  
+* Before extracting the archive file, cd to the directory where you want to extract the file.
+* Use the option -C /targetdir to specify the target directory where you want to extract the file to. If you want to put the contents of the file /root/homes.tar in the directory /tmp, for instance, you can use tar -xvf homes.tar -C /tmp.
+```bash
+tar -xvf homes.tar -C /tmp
+```  
+  
+Apart from extracting an entire archive file, it is also possible to extract one file out of the archive. To do so, use tar -xvf /archivename.tar file-you-want-to-extract. If your archive etc.tar contains the file /etc/hosts that you want to extract, for instance,
+use tar -xvf /root/etc.tar etc/hosts.
+```bash
+tar -xvf /root/etc.tar etc/hosts
+```
+
+### <b><ins><i>Managing Archives with tar</i></ins></b>
+
+### <b><ins><i>Managing Archives with tar</i></ins></b>
+
+### <b><ins><i>Managing Archives with tar</i></ins></b>
+
+### <b><ins><i>Managing Archives with tar</i></ins></b>

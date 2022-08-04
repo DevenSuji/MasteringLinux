@@ -1,0 +1,140 @@
+# <b><ins><i>Filters and Text Processing Commands</i></ins></b>
+* cut : Cut is a command line utility that allows us to cut parts of lines from specified files or piped data and print the result to standard output. It can be used to cut parts of a line by a delimiter, byte position, and character.
+```bash
+[devensuji@tower ~]$ cat seinfeld-characters
+Jerry Seinfeld
+Cosmo Kramer
+Elaine Benes
+George Costanza
+Newman mailman
+Frank Costanza
+Morty Seinfeld
+Babes Kramer
+Alton Benes
+J Peterman
+George Steinbrenner
+Uncel Leo
+David Puddy
+Justin Pitt
+Kenny Bania
+```
+```bash
+[devensuji@tower ~]$ cut -c1 seinfeld-characters
+J
+C
+E
+G
+N
+F
+M
+B
+A
+J
+G
+U
+D
+J
+K
+```
+```bash
+[devensuji@tower ~]$ cut -c1,2,4 seinfeld-characters
+Jer
+Com
+Eli
+Ger
+Nem
+Frn
+Mot
+Bae
+Alo
+J e
+Ger
+Une
+Dai
+Jut
+Ken
+```
+```bash
+[devensuji@tower ~]$ cut -c1,2,3,4,5,6 seinfeld-characters
+Jerry
+Cosmo
+Elaine
+George
+Newman
+Frank
+Morty
+Babes
+Alton
+J Pete
+George
+Uncel
+David
+Justin
+Kenny
+```
+```bash
+[devensuji@tower ~]$ cut -c1-6 seinfeld-characters # Here 1-6 is the range of characters that we want to cut.
+Jerry
+Cosmo
+Elaine
+George
+Newman
+Frank
+Morty
+Babes
+Alton
+J Pete
+George
+Uncel
+David
+Justin
+Kenny
+```
+```bash
+[devensuji@tower ~]$ cut -c1-3,6-9 seinfeld-characters # Using the double range
+Jer Sei
+Cos Kra
+Elae Be
+Geoe Co
+Newn ma
+Fra Cos
+Mor Sei
+Bab Kra
+Alt Ben
+J Perma
+Geoe St
+Unc Leo
+Dav Pud
+Jusn Pi
+Ken Ban
+```
+```bash
+[devensuji@tower ~]$ cut -d: -f 1 /etc/passwd # Here we are cutting a specific field. -d is used to specify the delimiter which is colon(:) here and -f is the field which is the first field here.
+root
+bin
+unbound
+polkitd
+sssd
+chrony
+sshd
+devensuji
+pesign
+kiran
+```
+```bash
+[devensuji@tower ~]$ ls -l | cut -c2-4 # Cutting and viewing only the permission of user from the output ls -l
+ota
+rw-
+rwx
+rwx
+rw-
+rwx
+rw-
+--x
+rwx
+```
+* awk
+* grep and egrep
+* sort
+* uniq
+* wc
